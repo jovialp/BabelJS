@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // Props are immutable and will help to transfer the variable values from component to component
+        //We can define the props within a component
+
+        //Factory Class fuctions in js/ functional component in react
+        function Person(props){
+            return(
+                <div>
+                    <h1>Welcome to Functional Component</h1>
+                    <h2>Name is {props.name} </h2>
+                    <h2>Email is {props.email} </h2>
+                </div>
+            )
+        }
+            ReactDOM.render(
+                <Person name="Jovial" email="jvlthms@gmail.com" />,
+                document.getElementById('root')
+            );
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Person(props){
+            const {id,name, email,mobile,salary} = props.data;
+            return(
+                <div>
+                    <h1>Accessing without props</h1>
+                    <h3>ID : {id}</h3>
+                    <h3>Name : {name}</h3>
+                    <h3>Email : {email}</h3>
+                    <h3>Mobile : {mobile}</h3>
+                    <h3>Salary</h3>
+                    <ul>
+                        <li>Basic : {salary.basic}</li>
+                        <li>Tax : {salary.ta}</li>
+                        <li>Da : {salary.da}</li>
+                    </ul>
+
+                </div>
+            );
+        }
+        const person =[
+            {
+                id:56155,
+                name:"Jovial",
+                email:'jvlthms@gmail.com',
+                salary: {
+                    basic: 6646,
+                    ta:45,
+                    da:54
+                }
+            },
+            {
+                id:12822,
+                name:"Siva",
+                email:'siva@gmail.com',
+                salary: {
+                    basic: 6646,
+                    ta:45,
+                    da:54
+                }
+            },
+            {
+                id:12753,
+                name:"Jinas",
+                email:'jinas@gmail.com',
+                salary: {
+                    basic: 6646,
+                    ta:45,
+                    da:54
+                }
+            },
+            {
+                id:12155,
+                name:"Manasa",
+                email:'manasa@gmail.com',
+                salary: {
+                    basic: 6646,
+                    ta:45,
+                    da:54
+                }
+            }
+        ];
+        function App(props){
+            return(
+                <div>
+                    <h1>Loop using map()</h1>
+                    {
+                        props.info.map(item =>{
+                            return(
+                                <div>
+                                    <Person key={item.id} data={item}/>
+                                </div>
+                            );
+                        } )
+                    }
+                </div>
+            );
+        }
+        ReactDOM.render(<App info={person}/>, document.getElementById('root'));
+    </script>
+</body>
+
+</html>

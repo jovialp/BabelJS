@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/babel">
+
+        function Menu(props) {
+            return (
+                <nav className="navbar navbar-inverse">
+                    <div className="container-fluid">
+                        <div className="navbar-header">
+                            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                            </button>
+                            <a className="navbar-brand" href="#">WebSiteName</a>
+                        </div>
+                        <div className="collapse navbar-collapse" id="myNavbar">
+                            <ul className="nav navbar-nav navbar-right">
+                                <li className="active"><a href="#">Home</a></li>
+                                <li><a href="#">Page 1</a></li>
+                                <li><a href="#">Page 2</a></li>
+                                <li><a href="#">Page 3</a></li>
+                                <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            )
+        }
+
+        function Header(props) {
+            return (
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xs-12">
+                            <h1 className="jumbotron text-center">App Component</h1>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function Form(props) {
+            return (
+                <div className="container">
+                    <div className="row">
+
+                        <div className="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-offset-3 well">
+                            <div className="col-xs-12 text-center">
+                                <h2>Contact Form</h2>
+                                <hr/>
+                            </div>
+                            <form className="form-horizontal">
+                                <div className="form-group">
+                                    <label className="control-label col-sm-2" for="email">Email:</label>
+                                    <div className="col-sm-10">
+                                        <input type="email" className="form-control" id="email" placeholder="Enter email" />
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <label className="control-label col-sm-2" for="pwd">Email:</label>
+                                    <div className="col-sm-10">
+                                        <input type="email" className="form-control" id="pwd" placeholder="Enter Email" />
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <label className="control-label col-sm-2" for="msg">Message:</label>
+                                    <div className="col-sm-10">
+                                        <textarea className="form-control" rows="5" id="msg"></textarea>
+                                    </div>
+                                </div>
+
+                                <div className="form-group text-center">
+                                    <div className="col-xs-offset-2 col-xs-3">
+                                        <button type="submit" className="btn btn-warning">Submit</button>
+
+                                    </div>
+                                    <div className="col-xs-offset-2 col-xs-3">
+                                        <button type="reset" className="btn btn-danger">Clear</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        function Map(props){
+            return(
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-6 col-sm-offset-3 well">
+                        <h3 className="text-center">Our Location</h3>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.675633598208!2d77.53849350000002!3d12.992586400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d8ba25aeae5%3A0xa9695663201f86b1!2sBe%20Practical-%20Job%20Guaranteed%20courses%20in%20Bangalore!5e0!3m2!1sen!2sin!4v1575479607049!5m2!1sen!2sin" width="100%" height="200" ></iframe>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Menu></Menu>
+                    <Header></Header>
+                    <Form></Form>
+                    <Map></Map>
+                </div>
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+
+</html>

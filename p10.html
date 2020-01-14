@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // Props are immutable and will help to transfer the variable values from component to component
+        //We can define the props within a component
+
+        //Factory Class fuctions in js/ functional component in react
+        function Salary(props){
+            return(
+                <div>
+                    <h2>Salary</h2>
+                    <h3>Basic =  {props.sal.basic}</h3>
+                    <h3>ta =  {props.sal.ta}</h3>
+                    <h3>da =  {props.sal.da}</h3>
+                </div>
+            )
+        }
+        function Person(props){
+            return(
+                <div>
+                    <h1>Welcome Person Component</h1>
+                    <h2>id is {props.emp.id} </h2>
+                    <h2>Name is {props.emp.name} </h2>
+                    <h2>Email is {props.emp.email} </h2>
+                    <Salary sal={props.emp.salary}/>
+                </div>
+            )
+        }
+        const user ={
+            id:12155,
+            name:"Jovial",
+            email:'jvlthms@gmail.com',
+            salary: {
+                basic: 6646,
+                ta:45,
+                da:54
+            }
+        }
+            ReactDOM.render(
+                <Person emp= {user} />,
+                document.getElementById('root')
+            );
+    </script>
+</body>
+
+</html>

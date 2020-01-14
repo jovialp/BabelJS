@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const Salary = props =>{
+            return(
+                <div>
+                    <h2>Salary</h2>
+                    <h3>Basic = {props.sal.basic}</h3>
+                    <h3>ta = {props.sal.ta}</h3>
+                    <h3>da = {props.sal.da}</h3>
+                </div>
+            )
+        }
+
+        const Person = (props) =>{
+            return(
+                <div>
+                    <h1>Welcome to Person Element Based component</h1>
+                    <h2>id is {props.info.id}</h2>
+                    <h2>name is {props.info.name}</h2>
+                    <h2>email is {props.info.email}</h2>
+                    <Salary sal={props.info.salary}/>
+                </div>
+            );
+        };
+        const user ={
+            id:12155,
+            name:"Jovial",
+            email:'jvlthms@gmail.com',
+            salary: {
+                basic: 6646,
+                ta:45,
+                da:54
+            }
+        }
+            ReactDOM.render(
+                <Person info ={user}/>,
+                document.getElementById('root')
+            );
+    </script>
+</body>
+
+</html>

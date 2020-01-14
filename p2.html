@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="myApp"></div>
+
+    <script type="text/babel">
+        const myName = 'Jovial';
+        const myEmail = 'jvlthms@gmail.com';
+
+        
+
+        const block1 = (
+            <div>
+                <h3>Block 1</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis labore sit harum quasi quae, similique, amet consequatur, voluptatibus fugit sapiente odio animi tenetur ut soluta debitis officia maxime quis corrupti!
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, est molestiae consectetur ab quas ex aut, numquam neque delectus et, ipsa optio consequatur cum dolor similique! Corporis incidunt dicta iusto.
+                </p>
+            </div>
+        );
+        const block2 = (
+            <div>
+                <h3>Block 2</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis labore sit harum quasi quae, similique, amet consequatur, voluptatibus fugit sapiente odio animi tenetur ut soluta debitis officia maxime quis corrupti!
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, est molestiae consectetur ab quas ex aut, numquam neque delectus et, ipsa optio consequatur cum dolor similique! Corporis incidunt dicta iusto.
+                </p>
+            </div>
+        );
+        const block3 = (
+            <div>
+                <h3>Block 3</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis labore sit harum quasi quae, similique, amet consequatur, voluptatibus fugit sapiente odio animi tenetur ut soluta debitis officia maxime quis corrupti!
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, est molestiae consectetur ab quas ex aut, numquam neque delectus et, ipsa optio consequatur cum dolor similique! Corporis incidunt dicta iusto.
+                </p>
+            </div>
+        );
+
+        const block4 = (
+            <div>
+            {block1}
+            {block2}    
+            {block3}
+            </div>
+        );
+
+        const custom = (
+            <div>
+                <h1>
+                    Hi, Welcome, I am {myName},
+                </h1>
+                <h2>my Email is {myEmail} </h2>
+                <div>
+                    {block4}
+                </div>
+            </div>
+        );
+        ReactDOM.render(
+            custom,
+            document.getElementById('myApp')
+        );
+    </script>
+</body>
+
+</html>

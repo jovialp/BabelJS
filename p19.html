@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://fb.me/react-0.14.7.js"></script>
+    <script src="https://fb.me/react-dom-0.14.7.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class App extends React.Component{
+            constructor(props) { 
+                super(props);
+                this.state = {
+                    text: 'Employee Details',
+                    salary: 20000,
+                    works : ['calculator', 'todo' , 'tera'],
+                    user: {
+                        id:124,
+                        name:'Jovial',
+                        email:'jvlthms@gmail.com'
+                    }
+                }
+            }
+            render(){
+                return (
+                    <div>
+                        <h1>{this.state.text}</h1>
+                        <hr/>
+                        <h3>Name : {this.state.user.name}</h3>
+                        <h3>Email : {this.state.user.email}</h3>
+                        <h3>Mobile : {this.state.user.mobile}</h3>
+                        <h3>Salary : {this.state.salary}</h3>
+                        <h3>Works</h3>
+                        <ul>
+                            {this.state.works.map(item=>{
+                                return <li>{item}</li>;
+                            })}    
+                        </ul>
+                    </div>
+                );
+            }
+        }
+        App.defaultProps = {
+            text: 'Employ Details'
+        };
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
